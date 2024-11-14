@@ -18,10 +18,11 @@ function Movies() {
   }, []);
 
   return (
-    <div className="col-3">
+    <div>
       {movies.map((movie) => (
-        <div key={movie.id} style={{ width: "150px", height: "300px" }}>
+        <div className="col-3" key={movie.id}>
           <img
+            className="poster_path"
             src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
             alt=""
           />
