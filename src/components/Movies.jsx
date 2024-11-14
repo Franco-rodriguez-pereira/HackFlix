@@ -1,36 +1,35 @@
-// import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
-// function Movies() {
-//   const [movies, setMovies] = useState([]);
+function Movies() {
+  const [movies, setMovies] = useState([]);
 
-//   useEffect(() => {
-//     console.log("El componente se acaba de montar (primer render).");
+  useEffect(() => {
+    console.log("El componente se acaba de montar (primer render).");
 
-//     async function getMovies() {
-//       const response = await fetch(
-//         "https://api.themoviedb.org/3/discover/movie?api_key=004d65b10e415d795c9d86a817745e22&include_adult=false&page=1&sort_by=popularity.desc&vote_count.gte=40"
-//       );
-//       const moviesData = await response.json();
-//       setMovies(moviesData.results);
-//     }
+    async function getMovies() {
+      const response = await fetch(
+        "https://api.themoviedb.org/3/discover/movie?api_key=004d65b10e415d795c9d86a817745e22&include_adult=false&page=1&sort_by=popularity.desc&vote_count.gte=40"
+      );
+      const moviesData = await response.json();
+      setMovies(moviesData.results);
+    }
 
-//     getMovies();
-//   }, []);
+    getMovies();
+  }, []);
+  return (
+    <div>
+      {movies.map((movie) => (
+        <div className="col-3" key={movie.id}>
+          <img
+            className="poster_path"
+            src={`https:image.tmdb.org/t/p/w500${movie.poster_path}`}
+            alt=""
+          />
+          <h3>{movie.title}</h3>
+        </div>
+      ))}
+    </div>
+  );
+}
 
-//   return (
-//     <div className="col-3">
-//       {movies.map((movie) => (
-//         <div key={movie.id} style={{ width: "200px", height: "300px" }}>
-//           <img
-//             src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-//             alt=""
-//             style={{ width: "150px" }}
-//           />
-//           <h3>{movie.title}</h3>
-//         </div>
-//       ))}
-//     </div>
-//   );
-// }
-
-    export default Movies;
+export default Movies;
