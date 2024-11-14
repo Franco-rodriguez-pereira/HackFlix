@@ -20,8 +20,8 @@ function Movies() {
             {movies.map((movie) => (
                 <div key={movie.id}
                 style={{ width:"150px", height: "300px" }}>
-                    {movie.poster_phat}
-                    {movie.title}
+                  <img src= {`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="" />
+                  <h3>{movie.title}</h3>
                 </div>
             ))}
         </div>
@@ -29,3 +29,4 @@ function Movies() {
 }
 
 export default Movies;
+
