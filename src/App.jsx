@@ -10,6 +10,9 @@ function App() {
       </div>
       <div className="container">
         <div>
+          <HalfRating />
+        </div>
+        <div>
           <MovieCard />
         </div>
       </div>
