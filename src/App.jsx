@@ -1,5 +1,7 @@
 import ReactStars from "react-rating-stars-component";
 import HalfRating from "./components/Rating";
+import Header from "./components/Header";
+import MovieCard from "./components/MovieCard";
 import "./App.css";
 function App() {
   return (
