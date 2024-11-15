@@ -18,7 +18,7 @@ function App() {
         <div className="stars-container">
           <HalfRating />
         </div>
-        <div className="row gy-5 gx-5">
+        <div className="row">
           <Movies />
         </div>
       </div>
