@@ -19,7 +19,7 @@ function Movies() {
   return (
     <div>
       {movies.map((movie) => (
-        <div className="col" key={movie.id}>
+        <div className="col-3" key={movie.id}>
           <img
             className="poster_path"
             src={`https:image.tmdb.org/t/p/w500${movie.poster_path}`}

@@ -3,12 +3,11 @@
 }
 
 body {
-  background-color: #eaeaea;
   background-color: rgb(35, 19, 19);
 }
 .poster_path {
-  height: 450px;
-  width: 300px;
+  height: 300px;
+  width: 200px;
 }
 .header {
   width: 100%;
@@ -17,4 +16,13 @@ body {
   background-size: cover;
   background-position: 10% 68%;
   margin-bottom: 100px;
+}
+
+.Title {
+  padding: 8px;
+  background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhfunCrlLlGOrwMaqIEYYwNtRCDSYQ0T7zfw&s);
+  color: transparent;
+  background-clip: text;
+  font-size: 50px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
