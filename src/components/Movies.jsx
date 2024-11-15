@@ -2,42 +2,45 @@ import { useEffect, useState } from "react";
 import MovieCard from "./MovieCard";
 function Movies({ filterRating }) {
   const [movies, setMovies] = useState([]);
-  const [errorMessage, setErrorMessage] = useState("");
+
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
-    async function getMovies() {
-      let url = "https://api.themoviedb.org/3/discover/movie?api_key=004d65b10e415d795c9d86a817745e22&include_adult=false&page=1&sort_by=popularity.desc&vote_count.gte=40";
+    const fetchMovies = async () => {
+      const response = await fetch(
+        `https://api.themoviedb.org/3/discover/movie?api_key=004d65b10e415d795c9d86a817745e22&page=${page}`
+      );
+      const data = await response.json();
+      setMovies((prev) => [...prev, ...data.results]);
+    };
+    fetchMovies();
+  }, [page]);
 
-      if (filterRating > 0) {
-        url += `&vote_average.gte=${filterRating}`;
+  useEffect(() => {
+    const handleScroll = () => {
+      if (
+        window.innerHeight + document.documentElement.scrollTop >=
+        document.documentElement.offsetHeight - 100
+      ) {
+        setPage((prevPage) => prevPage + 1);
       }
+    };
 
-      const response = await fetch(url);
-      const moviesData = await response.json();
-
-      if (moviesData.results.length === 0) {
-        setErrorMessage(
-          "Lo sentimos, no se encontraron películas con el rating solicitado."
-        );
-      } else {
-        setErrorMessage("");
-      }
-
-      setMovies(moviesData.results);
-    }
-
-    getMovies();
-  }, [filterRating]);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <>
-      {errorMessage && <p>{errorMessage}</p>}
-      <div className="row gy-4 gx-4"> 
+    <div className="container">
+      <div className="row gy-5 gx-1">
         {movies.map((movie) => (
-          <MovieCard key={movie.id} movie={movie} />
+          <div key={movie.id} className="col-3">
+            <MovieCard movie={movie} />
+          </div>
         ))}
       </div>
-    </>
+    </div>
+
   );
 }
 
