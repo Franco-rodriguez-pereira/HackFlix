@@ -1,8 +1,8 @@
 import ReactStars from "react-rating-stars-component";
 import HalfRating from "./components/Rating";
 import Header from "./components/Header";
-import MovieCard from "./components/MovieCard";
 import "./App.css";
+import Movies from "./components/Movies";
 function App() {
   return (
     <div className="allContainer">
@@ -13,8 +13,8 @@ function App() {
         <div>
           <HalfRating />
         </div>
-        <div>
-          <MovieCard />
+        <div className="row">
+          <Movies />
         </div>
       </div>
     </div>

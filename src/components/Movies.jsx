@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import MovieCard from "./MovieCard";
 
 function Movies() {
   const [movies, setMovies] = useState([]);
@@ -17,18 +18,11 @@ function Movies() {
     getMovies();
   }, []);
   return (
-    <div>
+    <>
       {movies.map((movie) => (
-        <div className="col-3" key={movie.id}>
-          <img
-            className="poster_path"
-            src={`https:image.tmdb.org/t/p/w500${movie.poster_path}`}
-            alt=""
-          />
-          <h3>{movie.title}</h3>
-        </div>
+        <MovieCard key={movie.id} movie={movie} />
       ))}
-    </div>
+    </>
   );
 }
 
