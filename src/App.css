@@ -14,6 +14,13 @@ body {
   background-size: 100% 100%;
 }
 
+.Container {
+  background-image: url("./assets/Rect_Light1.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
 .poster_path {
   height: 300px;
   width: 200px;
@@ -49,14 +56,14 @@ h1 {
     0 8px 0 #41330a, 0 10px 0 #41330a, 0 12px 0 #41330a;
 }
 
-.stars-container {
+.filtro {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   height: 100px;
+  align-items: center;
 }
 
-.span-filter {
+.h3-filtro {
   display: block;
   color: white;
   font-size: 2rem;

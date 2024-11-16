@@ -10,15 +10,7 @@ function App() {
         <Header />
       </div>
       <div className="container">
-        
-        <div>
-          <span className="span-filter">
-            ¡Filtra nuestras peliculas por Rating!
-          </span>
-        </div>
-        <div className="stars-container">
-          <HalfRating />
-        </div>
+        <div className="stars-container"></div>
         <div className="row">
           <Movies />
         </div>
