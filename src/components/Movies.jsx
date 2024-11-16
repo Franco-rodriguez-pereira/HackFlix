@@ -27,7 +27,6 @@ export default function Peliculas() {
 
     obtenerPeliculas();
   }, [pagina]);
-
   const calcularEstrellas = (vote_average) => {
     return Math.round((vote_average / 2) * 2) / 2;
   };
@@ -50,9 +49,7 @@ export default function Peliculas() {
         setPagina((prevPage) => prevPage + 1);
       }
     };
-
     window.addEventListener("scroll", handleScroll);
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -72,7 +69,6 @@ export default function Peliculas() {
           />
         </div>
       </div>
-      {/* Lista de películas */}
       <div className="row gy-5 gx-1">
         {peliculasFiltradas.length === 0 && (
           <div className="col-12">
