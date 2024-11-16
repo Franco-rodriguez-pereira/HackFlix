@@ -10,6 +10,7 @@ function App() {
         <Header />
       </div>
       <div className="container">
+        
         <div>
           <span className="span-filter">
             ¡Filtra nuestras peliculas por Rating!
