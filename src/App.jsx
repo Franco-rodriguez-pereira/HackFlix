@@ -14,6 +14,7 @@ function App() {
       </div>
       <div className="container">
 
+
   <div>
     <span className="span-filter">¡Filtra nuestras películas por Rating!</span>
   </div>
@@ -24,6 +25,7 @@ function App() {
     <Movies filterRating={filterRating} />
   </div>
 </div>
+
 
 
     </div>

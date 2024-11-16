@@ -2,12 +2,13 @@
 
 body {
   /* background-color: rgb(35, 19, 19); */
-  background-color: #040203;
+  /* background-color: #040203; */
   color: white;
+  /* background-image: url("./assets/Rect_Light1.png"); */
 }
 
 .allContainer {
-  background-image: url("https://jmp.sh/s/JbiBq3ZP4RzSt2ohADR9");
+  background-image: url("./assets/Rect_Light1.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
@@ -22,8 +23,8 @@ body {
   height: 500px;
   background-image: url("https://www.pixel4k.com/wp-content/uploads/2023/02/the-batman-movie-4k_1675637679.jpg");
   background-size: cover;
-  background-position: 10% 63%;
-  margin-bottom: 30px;
+  background-position: 10% 75%;
+  margin-bottom: 25px;
   box-shadow: #832f29 5px 5px 5px 5px;
   height: 500px;
   display: block;
@@ -40,9 +41,12 @@ h1 {
   color: white;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   padding-left: 10px;
-  font-family: 3rem;
+  font-size: 3rem;
   color: #fff;
-  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  color: #ffffff;
+  text-shadow: 0 2px 0 #41330a, 0 4px 0 #41330a, 0 6px 0 #41330a,
+    0 8px 0 #41330a, 0 10px 0 #41330a, 0 12px 0 #41330a;
 }
 
 .stars-container {
