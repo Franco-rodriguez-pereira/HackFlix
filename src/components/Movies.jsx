@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import MovieCard from "./MovieCard";
 import Rating from "@mui/material/Rating";
 
-export default function Peliculas() {
+export default function Movies({ filterRating, setFilterRating }) {
   const [peliculas, setPeliculas] = useState([]);
   const [pagina, setPagina] = useState(1);
-  const [filtroEstrellas, setFiltroEstrellas] = useState(0);
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     const obtenerPeliculas = async () => {
@@ -27,18 +27,19 @@ export default function Peliculas() {
 
     obtenerPeliculas();
   }, [pagina]);
+
   const calcularEstrellas = (vote_average) => {
     return Math.round((vote_average / 2) * 2) / 2;
   };
 
-  const peliculasFiltradas =
-    filtroEstrellas > 0
-      ? peliculas.filter(
-          (pelicula) =>
-            calcularEstrellas(pelicula.vote_average) >= filtroEstrellas &&
-            !pelicula.adult
-        )
-      : peliculas.filter((pelicula) => !pelicula.adult);
+  const peliculasFiltradas = peliculas.filter((pelicula) => {
+    const estrellas = calcularEstrellas(pelicula.vote_average);
+    const cumpleRating = filterRating === 0 || estrellas >= filterRating;
+    const cumpleBusqueda =
+      searchQuery === "" ||
+      pelicula.title.toLowerCase().includes(searchQuery.toLowerCase());
+    return cumpleRating && cumpleBusqueda && !pelicula.adult;
+  });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,29 +54,52 @@ export default function Peliculas() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const manejarBusqueda = () => {
+    console.log(`Buscando películas con el título: ${searchQuery}`);
+   
+  };
+
   return (
     <div className="container" style={{ minHeight: "100vh" }}>
-      {" "}
+      
       <div className="filtro">
         <h3 className="h3-filtro">Filtrar por estrellas</h3>
-        <div>
-          <Rating
-            name="filtro-calificacion"
-            value={filtroEstrellas}
-            precision={0.5}
-            onChange={(evento, nuevoValor) =>
-              setFiltroEstrellas(nuevoValor || 0)
-            }
+        <Rating
+          name="filtro-calificacion"
+          value={filterRating}
+          precision={0.5}
+          onChange={(evento, nuevoValor) => setFilterRating(nuevoValor || 0)}
+        />
+      </div>
+
+   
+      <div className="buscador">
+        <h3 className="h3-buscador">Buscar película</h3>
+        <div className="input-group mb-3">
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Ingresar título"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
           />
+          <button
+            className="btn btn-outline-secondary"
+            type="button"
+            onClick={manejarBusqueda}
+          >
+            Buscar
+          </button>
         </div>
       </div>
+
+    
       <div className="row gy-5 gx-1">
         {peliculasFiltradas.length === 0 && (
           <div className="col-12">
-            <p>No hay películas que cumplan con el filtro seleccionado.</p>
+            <p>No hay películas que cumplan con los filtros seleccionados.</p>
           </div>
         )}
-
         {peliculasFiltradas.map((pelicula) => (
           <div key={pelicula.id} className="col-lg-3 col-md-4 col-sm-6 col-12">
             <MovieCard movie={pelicula} />

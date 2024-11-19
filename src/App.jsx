@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import HalfRating from "./components/Rating";
 import Header from "./components/Header";
-import "./App.css";
 import Movies from "./components/Movies";
+import "./App.css";
 
 function App() {
-  const [filterRating, setFilterRating] = useState(0);
+  const [filterRating, setFilterRating] = useState(0); 
 
   return (
     <div className="allContainer">
@@ -13,8 +12,8 @@ function App() {
         <Header />
       </div>
       <div className="container">
-        <div className=" row gy-4 gx-4">
-          <Movies filterRating={filterRating} />
+        <div className="row gy-4 gx-4">
+          <Movies filterRating={filterRating} setFilterRating={setFilterRating} />
         </div>
       </div>
     </div>
