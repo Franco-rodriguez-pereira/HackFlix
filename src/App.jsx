@@ -14,19 +14,16 @@ function App() {
       </div>
       <div className="container">
 
-
-  <div>
-    <span className="span-filter">¡Filtra nuestras películas por Rating!</span>
-  </div>
-  <div className="stars-container">
-    <HalfRating setFilterRating={setFilterRating} />
-  </div>
-  <div className="row gy-4 gx-4">
-    <Movies filterRating={filterRating} />
-  </div>
-</div>
-
-
+        <div>
+          <span className="span-filter">¡Filtra nuestras películas por Rating!</span>
+        </div>
+        <div className="stars-container">
+          <HalfRating filterRating={filterRating} setFilterRating={setFilterRating} />
+        </div>
+        <div className="row gy-4 gx-4">
+          <Movies filterRating={filterRating} />
+        </div>
+      </div>
 
     </div>
   );
