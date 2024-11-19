@@ -13,18 +13,10 @@ function App() {
         <Header />
       </div>
       <div className="container">
-
-        <div>
-          <span className="span-filter">¡Filtra nuestras películas por Rating!</span>
-        </div>
-        <div className="stars-container">
-          <HalfRating filterRating={filterRating} setFilterRating={setFilterRating} />
-        </div>
-        <div className="row gy-4 gx-4">
+        <div className=" row gy-4 gx-4">
           <Movies filterRating={filterRating} />
         </div>
       </div>
-
     </div>
   );
 }
