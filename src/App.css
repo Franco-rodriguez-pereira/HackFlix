@@ -89,3 +89,13 @@ h1 {
 .movie-title {
   text-align: center;
 }
+
+.form-control {
+  opacity: 0.9;
+}
+
+.h3-buscador {
+  text-align: center;
+  font-family: "Bebas Neue", sans-serif;
+}
+
