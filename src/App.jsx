@@ -4,7 +4,7 @@ import Movies from "./components/Movies";
 import "./App.css";
 
 function App() {
-  const [filterRating, setFilterRating] = useState(0); 
+  const [filterRating, setFilterRating] = useState(0);
 
   return (
     <div className="allContainer">
@@ -13,7 +13,10 @@ function App() {
       </div>
       <div className="container">
         <div className="row gy-4 gx-4">
-          <Movies filterRating={filterRating} setFilterRating={setFilterRating} />
+          <Movies
+            filterRating={filterRating}
+            setFilterRating={setFilterRating}
+          />
         </div>
       </div>
     </div>

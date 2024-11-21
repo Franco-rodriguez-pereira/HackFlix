@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import MovieCard from "./MovieCard";
 import Rating from "@mui/material/Rating";
 
-export default function Movies({ filterRating, setFilterRating }) {
+function Movies({ filterRating, setFilterRating }) {
   const [peliculas, setPeliculas] = useState([]);
   const [pagina, setPagina] = useState(1);
   const [searchQuery, setSearchQuery] = useState("");
@@ -56,12 +56,10 @@ export default function Movies({ filterRating, setFilterRating }) {
 
   const manejarBusqueda = () => {
     console.log(`Buscando películas con el título: ${searchQuery}`);
-   
   };
 
   return (
     <div className="container" style={{ minHeight: "100vh" }}>
-      
       <div className="filtro">
         <h3 className="h3-filtro">Filtrar por estrellas</h3>
         <Rating
@@ -72,7 +70,6 @@ export default function Movies({ filterRating, setFilterRating }) {
         />
       </div>
 
-   
       <div className="buscador">
         <h3 className="h3-buscador">Buscar película</h3>
         <div className="input-group mb-3">
@@ -93,7 +90,6 @@ export default function Movies({ filterRating, setFilterRating }) {
         </div>
       </div>
 
-    
       <div className="row gy-5 gx-1">
         {peliculasFiltradas.length === 0 && (
           <div className="col-12">
@@ -109,3 +105,4 @@ export default function Movies({ filterRating, setFilterRating }) {
     </div>
   );
 }
+export default Movies;
