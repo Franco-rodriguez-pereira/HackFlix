@@ -52,8 +52,6 @@ h1 {
   color: #fff;
   text-transform: uppercase;
   color: #ffffff;
-  text-shadow: 0 2px 0 #41330a, 0 4px 0 #41330a, 0 6px 0 #41330a,
-    0 8px 0 #41330a, 0 10px 0 #41330a, 0 12px 0 #41330a;
 }
 
 .filtro {
@@ -98,4 +96,3 @@ h1 {
   text-align: center;
   font-family: "Bebas Neue", sans-serif;
 }
-

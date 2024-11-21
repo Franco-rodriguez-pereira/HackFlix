@@ -1,26 +1,16 @@
 import React, { useState } from "react";
-import Header from "./components/Header";
-import Movies from "./components/Movies";
 import "./App.css";
+import Home from "./web/Home";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 function App() {
-  const [filterRating, setFilterRating] = useState(0);
-
-  return (
-    <div className="allContainer">
-      <div className="header">
-        <Header />
-      </div>
-      <div className="container">
-        <div className="row gy-4 gx-4">
-          <Movies
-            filterRating={filterRating}
-            setFilterRating={setFilterRating}
-          />
-        </div>
-      </div>
-    </div>
-  );
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Home />,
+    },
+  ]);
+  return <RouterProvider router={router} />;
 }
 
 export default App;
