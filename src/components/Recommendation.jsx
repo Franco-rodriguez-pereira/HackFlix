@@ -1,4 +1,4 @@
-import recommendedMovies from "./movies";
+import recommendedMovies from "./RecommendedMovies";
 
 function Recommendation() {
   return (
