@@ -96,3 +96,9 @@ h1 {
   text-align: center;
   font-family: "Bebas Neue", sans-serif;
 }
+.Recommendation{
+  background-image: url("./assets/Rect_Light1.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
