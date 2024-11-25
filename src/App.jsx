@@ -8,11 +8,11 @@ import Recommendation from "./components/Recommendation";
 function App() {
   const router = createBrowserRouter([
     {
-      path: "/Home",
+      path: "/",
       element: <Home />,
     },
     {
-      path: "/Recommendation",
+      path: "/recommendation",
       element: <Recommendation />,
     },
   ]);
