@@ -11,10 +11,9 @@ function Recommendation() {
       <div className="row gy-4 gx-4">
         <>
       {recommendedMovies.map((movie) => (
-        <div className="col-3"
+        <div className="col-3 poster_path"
           key={movie.id}
           style={{
-            border: "1px solid #ccc",
             margin: "10px",
             padding: "10px",
             borderRadius: "8px",
@@ -31,7 +30,7 @@ function Recommendation() {
             }}
           />
           <h3>{movie.name}</h3>
-          <p>{movie.plot}</p>
+        {/*   <p>{movie.plot}</p> */}
         </div>
       ))}
       </>
