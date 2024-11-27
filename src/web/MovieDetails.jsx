@@ -39,15 +39,15 @@ function MovieDetails() {
       <div className="allContainerPelicula">
         <div className="container">
           <div className="row">
-            <div className="col-6">
-              <h2>{pelicula.title}</h2>
+            <div className="imagenDetails col-6">
               <img
                 src={`https://image.tmdb.org/t/p/w500${pelicula.poster_path}`}
                 alt={pelicula.title}
                 className="poster-pelicula"
               />
             </div>
-            <div className="col-6">
+            <div className="textoDetails col-6">
+              <h2 className="tituloPelicula">{pelicula.title}</h2>
               <p>
                 <b>Fecha de lanzamiento:</b> {pelicula.release_date}
               </p>

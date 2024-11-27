@@ -11,6 +11,17 @@ body {
   background-size: 100% 100%;
 }
 
+.allContainerPelicula {
+  background-image: url("./assets/Rect_Light1.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
+.movieDetailsContainer {
+  margin-top: 50px;
+}
+
 .Container {
   background-image: url("./assets/Rect_Light1.png");
   background-repeat: no-repeat;
@@ -38,9 +49,9 @@ body {
   font-size: 50px;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
-.movie-title {
+/* .movie-title {
   text-align: center;
-}
+} */
 h1 {
   color: white;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
@@ -73,22 +84,23 @@ h1 {
 }
 
 .poster_path {
-  height: 300px;
-  width: 200px;
+  height: 350px;
+  width: 250px;
+  z-index: 1;
 }
 
 .poster_path:hover {
   transition: 0.5s ease;
   transform: scale(1.2);
-  -moz-transform: scale(1.2); /* Firefox */
-  -webkit-transform: scale(1.2); /* Chrome - Safari */
-  -o-transform: scale(1.2); /* Opera */
+  -moz-transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -o-transform: scale(1.2);
   -ms-transform: scale(1.2);
-  border-radius: 10px; /* IE9 */
+  border-radius: 10px;
   cursor: pointer;
-  -moz-transition: 0.5s ease; /* Firefox */
-  -webkit-transition: 0.5s ease; /* Chrome - Safari */
-  -o-transition: 0.5s ease; /* Opera */
+  -moz-transition: 0.5s ease;
+  -webkit-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
 }
 
 .Recommendation {
@@ -96,4 +108,36 @@ h1 {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
+}
+
+.imagenDetails {
+  margin-top: 10px;
+}
+
+.textoDetails {
+  margin-top: 55px;
+}
+
+.botones {
+  text-decoration: none;
+  list-style-type: none;
+  color: white;
+}
+
+.botones:hover {
+  text-decoration: none;
+  list-style-type: none;
+  color: grey;
+}
+
+.botonesSection {
+  float: right;
+}
+
+.titulo {
+  color: white;
+}
+
+.headerTitle {
+  display: inline;
 }
