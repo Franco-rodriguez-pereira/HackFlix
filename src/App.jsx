@@ -1,9 +1,8 @@
-import React, { useState } from "react";
 import "./App.css";
 import Home from "./web/Home";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Recommend } from "@mui/icons-material";
 import Recommendation from "./components/Recommendation";
+import MovieDetails from "./web/MovieDetails";
 
 function App() {
   const router = createBrowserRouter([
@@ -14,6 +13,10 @@ function App() {
     {
       path: "/Recommendation",
       element: <Recommendation />,
+    },
+    {
+      path: "/pelicula/:id",
+      element: <MovieDetails />,
     },
   ]);
   return <RouterProvider router={router} />;
