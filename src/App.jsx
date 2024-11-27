@@ -11,7 +11,7 @@ function App() {
       element: <Home />,
     },
     {
-      path: "/Recommendation",
+      path: "/recommendation",
       element: <Recommendation />,
     },
     {

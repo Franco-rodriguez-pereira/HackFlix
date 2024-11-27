@@ -1,13 +1,19 @@
 import recommendedMovies from "./RecommendedMovies";
+import Header from "./Header";
 
 function Recommendation() {
+
   return (
-    <div>
+  <> 
+  <div className="header"><Header/></div>
+    <div className="Recommendation">
+     <div className="container">
+      <div className="row gy-4 gx-4">
+        <>
       {recommendedMovies.map((movie) => (
-        <div
+        <div className="col-3 poster_path"
           key={movie.id}
           style={{
-            border: "1px solid #ccc",
             margin: "10px",
             padding: "10px",
             borderRadius: "8px",
@@ -24,10 +30,14 @@ function Recommendation() {
             }}
           />
           <h3>{movie.name}</h3>
-          <p>{movie.plot}</p>
+        {/*   <p>{movie.plot}</p> */}
         </div>
       ))}
+      </>
+      </div>
+     </div>
     </div>
+    </>
   );
 }
 
