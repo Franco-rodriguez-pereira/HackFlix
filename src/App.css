@@ -172,6 +172,21 @@ body {
 }
 
 .linkActivo {
-  border-bottom: 2px solid #000000;
+  border-bottom: 2px solid #fff;
   padding-bottom: 0.1rem;
+}
+
+.Recommendation .poster {
+  width: 250px;
+  height: 350px;
+  object-fit: cover;
+}
+
+.Recommendation .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.Recommendation .row {
+  gap: 1px;
 }
