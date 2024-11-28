@@ -25,11 +25,7 @@ function Searcher({ setSearchQuery }) {
           onChange={handleInputChange}
         />
         <div className="input-group-append">
-          <button
-            className="btn btn-outline-secondary"
-            type="button"
-            onClick={handleSearch}
-          >
+          <button className="btn" type="button" onClick={handleSearch}>
             Buscar
           </button>
         </div>

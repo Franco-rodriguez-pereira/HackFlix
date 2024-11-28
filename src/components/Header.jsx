@@ -1,24 +1,31 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Header() {
   return (
-    <header>
-      <h1 className="headerTitle">HACKFLIX</h1>
-      <div className="botonesSection">
+    <header className="navbar">
+      <div className="logo">
+        <h1>HACKFLIX</h1>
+      </div>
+      <nav className="nav-links">
         <ul>
-          <li className="botones">
-            <NavLink to="/recommendation" className="botones">
-              Recommendations
-            </NavLink>
-          </li>
-          <li className="botones">
-            {" "}
-            <NavLink to="/" className="botones">
+          <li>
+            <NavLink
+              to="/"
+              className={({ isActive }) => (isActive ? "linkActivo" : "")}
+            >
               Home
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              to="/recommendation"
+              className={({ isActive }) => (isActive ? "linkActivo" : "")}
+            >
+              Recommendations
+            </NavLink>
+          </li>
         </ul>
-      </div>
+      </nav>
     </header>
   );
 }
