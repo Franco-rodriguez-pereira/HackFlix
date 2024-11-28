@@ -25,7 +25,7 @@ const recommendedMovies = [
     name: "Coraline",
     plot: "Coraline tells the story of a little girl named Coraline Jones who feels dissatisfied with her life. Her family moves into an old house that has been divided into apartments. Coraline discovers a secret door in her new home that leads to an alternate world, where everything is more colorful and attractive. However, she soon realizes that this world is not as perfect as it seems, and she must confront the evil Other Mother to save her real parents and herself.",
     poster_path:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGSzQNvFocO73fzZ2_MypyxQXZgeYB6N0B2A&s",
+      "https://m.media-amazon.com/images/I/81JPKdfJjdL._AC_UF894,1000_QL80_.jpg",
   },
   {
     id: 5,

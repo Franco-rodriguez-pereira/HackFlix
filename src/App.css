@@ -175,3 +175,40 @@ body {
   border-bottom: 2px solid #000000;
   padding-bottom: 0.1rem;
 }
+.recommendation {
+  justify-content: space-evenly;
+ 
+}
+.poster-pelicula{
+  width: 500px; 
+  height: 700px;
+  padding: 30px;
+}
+.imagenDetails{
+  width: 600px; 
+  height: 700px;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+}
+.Recommendation-halloween{
+  background-image: url("https://media.glamour.mx/photos/635a885f4bf1c58ff7314bee/16:9/w_2560%2Cc_limit/halloween-ku%25CC%2588rbis-schnitzen-hack-trick-viral-gettyimages-613872668.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+.headerToRecommendations{background-color: #000000;}
+
+.recommendationTittle{
+  
+  font-family: "Bebas Neue", sans-serif;
+  color: white;
+  text-align: center;
+  font-size: 500%;
+  padding: 60px;
+}
+.movieDescription{
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+}

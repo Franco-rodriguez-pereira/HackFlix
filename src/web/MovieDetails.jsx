@@ -37,7 +37,8 @@ function MovieDetails() {
         <Header />
       </div>
       <div className="allContainerPelicula">
-        <div className="container">
+        <div className="container"
+        style={{padding: "30px"}}>
           <div className="row">
             <div className="imagenDetails col-6">
               <img

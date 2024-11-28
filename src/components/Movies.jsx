@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
-import MovieCard from "./MovieCard";
+import React, { useEffect, useState } from "react";
 import Rating from "@mui/material/Rating";
+import Filter from "./Filter";
 
-function Movies({ filterRating, setFilterRating }) {
+function Movies({ filterRating = 0, setFilterRating = () => {} }) {
   const [peliculas, setPeliculas] = useState([]);
   const [pagina, setPagina] = useState(1);
   const [searchQuery, setSearchQuery] = useState("");
@@ -11,7 +11,7 @@ function Movies({ filterRating, setFilterRating }) {
     const obtenerPeliculas = async () => {
       try {
         const respuesta = await fetch(
-          `https://api.themoviedb.org/3/discover/movie?api_key=004d65b10e415d795c9d86a817745e22&page=${pagina}`
+          `https://api.themoviedb.org/3/discover/movie?api_key=004d65b10e415d795c9d86a817745e22&page=${pagina}&include_adult=false`
         );
         const datos = await respuesta.json();
         setPeliculas((prev) => {
@@ -27,19 +27,6 @@ function Movies({ filterRating, setFilterRating }) {
 
     obtenerPeliculas();
   }, [pagina]);
-
-  const calcularEstrellas = (vote_average) => {
-    return Math.round((vote_average / 2) * 2) / 2;
-  };
-
-  const peliculasFiltradas = peliculas.filter((pelicula) => {
-    const estrellas = calcularEstrellas(pelicula.vote_average);
-    const cumpleRating = filterRating === 0 || estrellas >= filterRating;
-    const cumpleBusqueda =
-      searchQuery === "" ||
-      pelicula.title.toLowerCase().includes(searchQuery.toLowerCase());
-    return cumpleRating && cumpleBusqueda && !pelicula.adult;
-  });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -91,18 +78,14 @@ function Movies({ filterRating, setFilterRating }) {
       </div>
 
       <div className="row gy-5 gx-1">
-        {peliculasFiltradas.length === 0 && (
-          <div className="col-12">
-            <p>No hay películas que cumplan con los filtros seleccionados.</p>
-          </div>
-        )}
-        {peliculasFiltradas.map((pelicula) => (
-          <div key={pelicula.id} className="col-lg-3 col-md-4 col-sm-6 col-12">
-            <MovieCard movie={pelicula} />
-          </div>
-        ))}
+        <Filter
+          peliculas={peliculas}
+          filterRating={filterRating}
+          searchQuery={searchQuery}
+        />
       </div>
     </div>
   );
 }
+
 export default Movies;

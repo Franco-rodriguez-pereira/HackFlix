@@ -3,6 +3,7 @@ import Home from "./web/Home";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Recommendation from "./components/Recommendation";
 import MovieDetails from "./web/MovieDetails";
+import RecommendationDetails from "./web/RecommendationDetails";
 
 function App() {
   const router = createBrowserRouter([
@@ -17,6 +18,10 @@ function App() {
     {
       path: "/pelicula/:id",
       element: <MovieDetails />,
+    },
+    {
+      path: "/recommendation/:id",
+      element: <RecommendationDetails />,
     },
   ]);
   return <RouterProvider router={router} />;
