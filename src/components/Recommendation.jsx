@@ -3,7 +3,7 @@ import recommendedMovies from "./RecommendedMovies";
 import Header from "./Header";
 
 function Recommendation() {
-  return
+  return(
   <>
  <div className="headerToRecommendations">
   <Header />
@@ -41,7 +41,7 @@ style={{padding: "50px"}}>
     </div>
     </div>
   </>
- ();
+ );
 }
 
 export default Recommendation;
