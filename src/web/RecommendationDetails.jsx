@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import recommendedMovies from "../components/RecommendedMovies";
 import Header from "../components/Header";
+import { NavLink } from "react-router-dom";
 
 function RecommendationDetails() {
   const { id } = useParams();
@@ -39,6 +40,12 @@ function RecommendationDetails() {
               <h2>{movie.name}</h2>
                 <b>Description:</b> {movie.plot}
               </p>
+              <NavLink
+              to="/recommendation"
+              className={({ isActive }) => (isActive ? "linkActivo" : "")}
+            >
+              <button style={{borderRadius:"10px", backgroundColor:"black", color:"white"}}>Back</button>
+            </NavLink>
             </div>
       </div>
       </div></div>

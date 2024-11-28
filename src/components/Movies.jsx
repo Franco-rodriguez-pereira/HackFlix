@@ -47,7 +47,7 @@ function Movies({ filterRating = 0, setFilterRating = () => {} }) {
 
   return (
     <div className="container" style={{ minHeight: "100vh" }}>
-      <div className="filtro">
+      <div style={{marginTop:"30px"}} className="filtro">
         <h3 className="h3-filtro">Filtrar por estrellas</h3>
         <Rating
           name="filtro-calificacion"
